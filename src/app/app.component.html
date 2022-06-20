@@ -1,0 +1,22 @@
+<div class="commands">
+  <input [(ngModel)]="textAdd" style="border-right: 20px;">
+  <select [(ngModel)]="color">
+    <option *ngFor="let color of colors">
+      {{color}}
+    </option>
+  </select>
+
+  <button (click)="addDrag()">
+    Aggiungi
+  </button>
+
+  <button (click)="save()">
+    Salva
+  </button>
+</div>
+<div class="field">
+
+</div>
+<div class="box-circle" style="--color:{{item.color}}" cdkDrag *ngFor="let item of dragComponents">
+  {{item.text}}
+</div>
